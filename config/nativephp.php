@@ -1,7 +1,9 @@
 <?php
 
 return [
+    'debug_mode' => env('NATIVEPHP_DEBUG_MODE', false),
 
+    'polling_interval' => env('NATIVEPHP_POLLING_INTERVAL', 5),
 
     /**
      * The version of your app.

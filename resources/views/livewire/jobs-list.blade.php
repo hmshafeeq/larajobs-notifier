@@ -1,6 +1,6 @@
 <!-- jobs.blade.php -->
 
-<div class="grid grid-cols-1" wire:poll.{{ $pollingInterval }}s.keep-alive="fetchJobs()">
+<div class="grid grid-cols-1" {{ 'wire:poll.'.$pollingInterval.'s.keep-alive' }}="fetchJobs()">
 
     @foreach ($jobs as $job)
 

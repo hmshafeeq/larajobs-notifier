@@ -16,10 +16,9 @@ class JobsList extends Component
 
     public function mount()
     {
-        $this->pollingInterval = 120;
-
         $this->fetchJobs();
 
+        $this->pollingInterval = config('nativephp.polling_interval', 5);
     }
 
     public function render()
@@ -30,11 +29,9 @@ class JobsList extends Component
     public function fetchJobs()
     {
 
-//        $newJobs = config('nativephp.debug_mode', false)
-//            ? $this->getFeedsData()
-//            : $this->getFakeData();
-
-        $newJobs = $this->getFakeData();
+        $newJobs = config('nativephp.debug_mode', false)
+            ? $this->getFakeData()
+            : $this->getFeedsData();
 
         $this->sendNewJobNotifications($newJobs);
 

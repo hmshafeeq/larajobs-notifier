@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Native\Laravel\Facades\MenuBar;
-use Native\Laravel\Facades\Window;
+
 
 class NativeAppServiceProvider
 {
