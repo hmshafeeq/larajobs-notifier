@@ -19,6 +19,7 @@ return [
      */
     'app_id' => env('NATIVEPHP_APP_ID'),
 
+
     /**
      * If your application allows deep linking, you can specify the scheme
      * to use here. This is the scheme that will be used to open your

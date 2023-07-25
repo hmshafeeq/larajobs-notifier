@@ -3,7 +3,8 @@
 namespace App\Providers;
 
 use Native\Laravel\Facades\MenuBar;
-
+use Native\Laravel\Facades\Window;
+use Native\Laravel\Menu\Menu;
 
 class NativeAppServiceProvider
 {
@@ -13,12 +14,22 @@ class NativeAppServiceProvider
      */
     public function boot(): void
     {
-        MenuBar::create()->icon("https://larajobs.com")
+
+        MenuBar::create()->icon('https://larajobs.com')
             ->width(600)
-            ->height(800);
+            ->height(800)
+            ->withContextMenu(
+                Menu::new()
+                    ->label('Settings')
+                    ->separator()
+                    ->link('https://nativephp.com', 'Learn more…')
+                    ->separator()
+                    ->quit()
+            )->alwaysOnTop();
 
 
-        /**
+
+         /**
             Dock::menu(
                 Menu::new()
                     ->event(DockItemClicked::class, 'Settings')
@@ -39,5 +50,6 @@ class NativeAppServiceProvider
                 ->event(ShortcutPressed::class)
                 ->register();
         */
+
     }
 }
