@@ -25,7 +25,7 @@ class NativeAppServiceProvider
                     ->link('https://nativephp.com', 'Learn more…')
                     ->separator()
                     ->quit()
-            )->alwaysOnTop();
+            );
 
 
 
